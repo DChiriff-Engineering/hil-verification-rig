@@ -6,33 +6,38 @@ Thumbs.db
 *.swp
 *.swo
 
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+*.egg-info/
+dist/
+
+# Pico SDK / CMake
+firmware/*/build/
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.elf
+*.uf2
+*.hex
+*.bin
+*.map
+
+# Arduino generated outputs
+firmware/witness_uno/build/
+
+# Local evidence; curated reviewed evidence may be committed elsewhere deliberately
+results/local/
+
 # Logs / temporary files
 *.log
 *.tmp
 *~
-
-    # C/C++ / Pico SDK build output
-    build/
-    cmake-build-*/
-    CMakeFiles/
-    CMakeCache.txt
-    cmake_install.cmake
-    Makefile
-    *.elf
-    *.uf2
-    *.hex
-    *.bin
-    *.map
-
-    # Python
-    __pycache__/
-    *.py[cod]
-    .pytest_cache/
-    .coverage
-    htmlcov/
-    .venv/
-    venv/
-    env/
-
-    # Generated result bundles (keep curated examples explicitly)
-    results/local/
