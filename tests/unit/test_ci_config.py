@@ -21,3 +21,11 @@ def test_ci_never_runs_physical_hardware_tests():
     text = (root / ".github/workflows/verification.yml").read_text()
     assert 'pytest -m "not hil"' in text
     assert "HIL_RUN=1" not in text
+
+
+def test_yaml_workflow_parser_is_declared_as_dev_dependency():
+    import tomllib
+    root = Path(__file__).resolve().parents[2]
+    data = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+    dev = data["project"]["optional-dependencies"]["dev"]
+    assert any(dep.lower().startswith("pyyaml") for dep in dev)
