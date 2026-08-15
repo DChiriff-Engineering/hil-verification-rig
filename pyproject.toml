@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hil-verification-rig"
+version = "0.1.0"
+description = "Host automation for a three-controller Hardware-in-the-Loop verification rig"
+requires-python = ">=3.11"
+dependencies = [
+  "pyserial>=3.5",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "PyYAML>=6.0"]
+
+[project.scripts]
+hilrig = "hil.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "host"}
+
+[tool.setuptools.packages.find]
+where = ["host"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["hil: requires the physical HIL rig"]
+addopts = "-ra"
