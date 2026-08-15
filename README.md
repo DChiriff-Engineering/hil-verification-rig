@@ -1,6 +1,6 @@
 # Three-Controller HIL Verification Bench for an Embedded Power/Thermal Supervisor
 
-**Status:** Hardware-independent implementation baseline complete locally; GitHub CI firmware compiler verification and physical rig validation are separate gates.
+**Status:** Hardware-independent baseline verified in GitHub CI; physical Windows-rig validation remains pending.
 
 A requirements-driven Hardware-in-the-Loop verification platform built from **two Raspberry Pi Pico boards**, an **Arduino UNO Rev3**, and a **Python/pytest** test executive. The bench verifies a physical embedded power/thermal supervisor against a deterministic real-time plant under nominal, boundary, timing, communication-fault, and safety-fault conditions.
 
@@ -141,9 +141,9 @@ A physical run will create a timestamped folder under `results/local/` containin
 
 ## Results
 
-**Host/software regression:** implemented and locally testable; branch CI result is recorded only after GitHub Actions runs.
+**Host/software regression:** **PASS** — 66 hardware-independent tests under Python 3.11/3.12/3.13, plus the 14/14 deterministic core-scenario regression.
 
-**Firmware compiler verification:** pending GitHub Actions on the implementation branch.
+**Firmware compiler verification:** **PASS** — both RP2040 targets compile against Pico SDK 2.3.0 and the UNO witness compiles for `arduino:avr:uno`. Commit-matched artifacts are published by GitHub Actions with SHA-256 manifests.
 
 **Physical HIL results:** _Not yet available._
 

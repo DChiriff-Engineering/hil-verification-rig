@@ -25,8 +25,8 @@
 - [x] HIL Pico plant/fault-injector firmware source.
 - [x] Read-only UNO witness firmware source.
 - [x] Local pin/safety/constant contract checks.
-- [ ] GitHub CI compiler verification for both Pico targets.
-- [ ] GitHub CI compiler verification for UNO Rev3.
+- [x] GitHub CI compiler verification for both Pico targets.
+- [x] GitHub CI compiler verification for UNO Rev3.
 
 ## Phase 3 — Windows physical bring-up
 
